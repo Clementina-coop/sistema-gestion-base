@@ -12,7 +12,7 @@ docker-compose build
 docker-compose up
 
 # cargar datos iniciales
-bash utils/restore_docker_local.sh data/bk_20200409_200353 reactadminfeathers_bonsai-mongo_1
+bash utils/restore_docker_local.sh data/bk_20200409_200353 sistemagestionbase_bonsai-mongo_1
 ```
 
 Abrir el navegador en [http://localhost:3000](http://localhost:3000) y loguearse con:
