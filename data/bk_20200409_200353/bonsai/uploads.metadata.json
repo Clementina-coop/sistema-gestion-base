@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"bonsai.uploads"}],"uuid":"dbacaeb5032844dfac00eca69b8517a1"}

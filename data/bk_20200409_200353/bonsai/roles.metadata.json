@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"bonsai.roles"}],"uuid":"7874b83c1c8149dd9d57d7f86d7f627a"}

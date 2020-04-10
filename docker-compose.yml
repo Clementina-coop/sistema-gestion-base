@@ -1,0 +1,58 @@
+version: '3.3'
+services:
+  bonsai-front:
+    build:
+      context: ./front
+    ports:
+      - 3000:80
+    restart: always
+
+  bonsai-api:
+    build:
+      context: ./back
+    restart: always
+    volumes:
+     - /etc/localtime:/etc/localtime:ro
+     - uploads:/app/public/uploads
+    network_mode: host
+    ports:
+      - 3030:3030
+    environment:
+     - API_HOST=${API_HOST}
+     - API_PORT=${API_PORT}
+     - MONGO_DB=${MONGO_DB}
+     - MONGO_OPTIONS_AUTH_SOURCE=${MONGO_OPTIONS_AUTH_SOURCE}
+     - AUTH_SECRET=${AUTH_SECRET}
+     - AUTH_SERVICE=${AUTH_SERVICE}
+     - AUTH_TOKEN_AUDIENCE=${AUTH_TOKEN_AUDIENCE}
+     - AUTH_TOKEN_EXPIRATION=${AUTH_TOKEN_EXPIRATION}
+     - AUTH_ENTITY=${AUTH_ENTITY}
+     - AUTH_USERNAME_FIELD=${AUTH_USERNAME_FIELD}
+     - AUTH_PASSWORD_FIELD=${AUTH_PASSWORD_FIELD}
+     - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+     - MAX_SIZE_POST=${MAX_SIZE_POST}
+    depends_on:
+     - bonsai-mongo
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "3"
+
+  bonsai-mongo:
+    image: mongo:4.2.5
+    ports:
+     - 27017:27017
+    restart: always
+    volumes:
+     - datadb:/data/db
+     - /etc/localtime:/etc/localtime:ro
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "3"
+
+volumes:
+  datadb:
+  uploads:
