@@ -3,7 +3,15 @@
 ##### Probar el sistema con docker-compose:
 
 
+
+
 ```bash
+
+# descargar el repositorio
+git clone https://github.com/Clementina-coop/sistema-gestion-base.git
+
+# Entrar al direcotrio del proyecto
+cd sistema-gestion-base
 
 # generar imágenes de docker
 docker-compose build
@@ -11,7 +19,7 @@ docker-compose build
 # levantar el sistema
 docker-compose up
 
-# cargar datos iniciales
+# cargar datos iniciales en una nueva terminal
 bash utils/restore_docker_local.sh data/bk_20200409_200353 sistemagestionbase_bonsai-mongo_1
 ```
 
