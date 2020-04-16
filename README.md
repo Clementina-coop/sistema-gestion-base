@@ -3,10 +3,7 @@
 ##### Probar el sistema con docker-compose:
 
 
-
-
 ```bash
-
 # descargar el repositorio
 git clone https://github.com/Clementina-coop/sistema-gestion-base.git
 
@@ -20,7 +17,7 @@ docker-compose build
 docker-compose up
 
 # cargar datos iniciales en una nueva terminal
-bash utils/restore_docker_local.sh data/bk_20200409_200353 sistemagestionbase_bonsai-mongo_1
+bash utils/restore_docker_local.sh data/bk_20200409_200353 bonsai-db
 ```
 
 Abrir el navegador en [http://localhost:3000](http://localhost:3000) y loguearse con:

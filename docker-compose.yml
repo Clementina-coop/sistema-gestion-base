@@ -3,6 +3,7 @@ services:
   bonsai-front:
     build:
       context: ./front
+    container_name: bonsai
     ports:
       - 3000:80
     restart: always
@@ -10,6 +11,7 @@ services:
   bonsai-api:
     build:
       context: ./back
+    container_name: bonsai-api
     restart: always
     volumes:
      - /etc/localtime:/etc/localtime:ro
@@ -41,6 +43,7 @@ services:
 
   bonsai-mongo:
     image: mongo:4.2.5
+    container_name: bonsai-db
     ports:
      - 27017:27017
     restart: always
