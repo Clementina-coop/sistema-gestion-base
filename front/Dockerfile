@@ -1,4 +1,4 @@
-FROM node:10.20.0-buster as front
+FROM node:10.20.1-alpine as front
 
 WORKDIR /app/
 
