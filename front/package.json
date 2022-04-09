@@ -8,7 +8,7 @@
     "@feathersjs/feathers": "^4.4.1",
     "@feathersjs/rest-client": "^4.4.1",
     "jwt-decode": "^2.2.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "object-diff": "^0.0.4",
     "prop-types": "^15.7.2",
     "ra-data-feathers": "^2.5.0",
